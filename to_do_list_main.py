@@ -1,5 +1,6 @@
 import csv
 
+# A class for tasks
 class Task():
     def __init__(self, name, description, priority):
         self.name = name
@@ -11,6 +12,7 @@ class Task():
         elif priority == 3 or priority == "high":
             self.priority = "high"
 
+# A class for the to do list we're gonna make
 class ToDoList():
 
     def __init__(self):
@@ -44,6 +46,7 @@ class ToDoList():
             for row in self.tasks:
                 writer.writerow({'name': row.name, 'description': row.description, 'priority': row.priority})
 
+# The text interface
 number = 0
 to_do_list = ToDoList()
 to_do_list.load_csv()
@@ -124,4 +127,4 @@ while number != 5:
         else:
             print("You can only insert one of the command numbers!")
     except ValueError:
-        print("You can only insert a command numbers!\n")    
+        print("You can only insert a command number!\n")    
